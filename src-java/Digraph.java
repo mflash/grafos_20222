@@ -272,6 +272,8 @@ public class Digraph {
 		s.append("digraph {" + NEWLINE);
 		s.append("rankdir = LR;"+NEWLINE);
 		s.append("node [shape = circle];"+NEWLINE);
+    	for (int v = 0; v < V; v++)
+            s.append(v+";"+NEWLINE);
 		for (int v = 0; v < V; v++) {
 			for (int w : adj[v]) {
 				s.append(v + " -> " + w + ";" + NEWLINE);

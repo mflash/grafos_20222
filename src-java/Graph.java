@@ -237,6 +237,8 @@ public class Graph {
     	s.append("graph {"+NEWLINE);
 		s.append("rankdir = LR;"+NEWLINE);
 		s.append("node [shape = circle];"+NEWLINE);
+    	for (int v = 0; v < V; v++)
+            s.append(v+";"+NEWLINE);
     	for (int v = 0; v < V; v++) {
             for (int w : adj[v]) {
             	String edge = Math.min(v,w)+"-"+Math.max(v, w);
