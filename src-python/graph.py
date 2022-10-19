@@ -3,6 +3,7 @@ class Graph:
     def __init__(self, filename=None):
         self.verts = {}
         self.totalEdges = 0
+        self.totalVerts = 0
 
         if filename:
             with open(filename) as f:
@@ -19,6 +20,7 @@ class Graph:
         if value in self.verts:
             return
         self.verts[value] = []
+        self.totalVerts += 1
 
 
     def addEdge(self, v1, v2):
@@ -67,14 +69,16 @@ class Graph:
 
 if __name__ == "__main__":
 
-    #g = Graph('tinyG.txt')
-    g = Graph()
+    g = Graph('tinyG.txt')
+    #g = Graph()
 
+    """
     g.addEdge(0, 2);
     g.addEdge(2, 1);
     g.addEdge(2, 4);
     g.addEdge(1, 3);
     g.addEdge(3, 4);
+    """
 
     print(g.adj(2))
 
